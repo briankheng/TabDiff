@@ -1,0 +1,78 @@
+\begin{thebibliography}{14}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Chandola et~al.(2009)Chandola, Banerjee, and Kumar]{chandola2009survey}
+Varun Chandola, Arindam Banerjee, and Vipin Kumar.
+\newblock Anomaly detection: A survey.
+\newblock \emph{ACM Computing Surveys}, 41\penalty0 (3), 2009.
+
+\bibitem[Chawla et~al.(2002)Chawla, Bowyer, Hall, and Kegelmeyer]{chawla2002smote}
+Nitesh~V. Chawla, Kevin~W. Bowyer, Lawrence~O. Hall, and W.~Philip Kegelmeyer.
+\newblock {SMOTE}: Synthetic minority over-sampling technique.
+\newblock \emph{Journal of Artificial Intelligence Research}, 16, 2002.
+
+\bibitem[Dhariwal and Nichol(2021)]{dhariwal2021beat}
+Prafulla Dhariwal and Alexander Nichol.
+\newblock Diffusion models beat {GANs} on image synthesis.
+\newblock In \emph{Advances in Neural Information Processing Systems (NeurIPS)}, 2021.
+
+\bibitem[Esteban et~al.(2017)Esteban, Hyland, and R{\"a}tsch]{esteban2017tstr}
+Crist{\'o}bal Esteban, Stephanie~L. Hyland, and Gunnar R{\"a}tsch.
+\newblock Real-valued (medical) time series generation with recurrent conditional {GANs}.
+\newblock arXiv:1706.02633, 2017.
+
+\bibitem[Han et~al.(2022)Han, Hu, Huang, Jiang, and Zhao]{han2022adbench}
+Songqiao Han, Xiyang Hu, Hailiang Huang, Minqi Jiang, and Yue Zhao.
+\newblock {ADBench}: Anomaly detection benchmark.
+\newblock In \emph{Advances in Neural Information Processing Systems (NeurIPS), Datasets and Benchmarks Track}, 2022.
+
+\bibitem[Ho and Salimans(2022)]{ho2022cfg}
+Jonathan Ho and Tim Salimans.
+\newblock Classifier-free diffusion guidance.
+\newblock arXiv:2207.12598, 2022.
+
+\bibitem[Kotelnikov et~al.(2023)Kotelnikov, Baranchuk, Rubachev, and Babenko]{kotelnikov2023tabddpm}
+Akim Kotelnikov, Dmitry Baranchuk, Ivan Rubachev, and Artem Babenko.
+\newblock {TabDDPM}: Modelling tabular data with diffusion models.
+\newblock In \emph{International Conference on Machine Learning (ICML)}, 2023.
+
+\bibitem[Li et~al.(2022)Li, Zhao, Hu, Botta, Ionescu, and Chen]{li2022ecod}
+Zheng Li, Yue Zhao, Xiyang Hu, Nicola Botta, Cezar Ionescu, and George~H. Chen.
+\newblock {ECOD}: Unsupervised outlier detection using empirical cumulative distribution functions.
+\newblock \emph{IEEE Transactions on Knowledge and Data Engineering}, 2022.
+
+\bibitem[Liu et~al.(2008)Liu, Ting, and Zhou]{liu2008iforest}
+Fei~Tony Liu, Kai~Ming Ting, and Zhi-Hua Zhou.
+\newblock Isolation forest.
+\newblock In \emph{IEEE International Conference on Data Mining (ICDM)}, 2008.
+
+\bibitem[Liu et~al.(2022)Liu, Li, Du, Torralba, and Tenenbaum]{liu2022composable}
+Nan Liu, Shuang Li, Yilun Du, Antonio Torralba, and Joshua~B. Tenenbaum.
+\newblock Compositional visual generation with composable diffusion models.
+\newblock In \emph{European Conference on Computer Vision (ECCV)}, 2022.
+
+\bibitem[Pang et~al.(2021)Pang, Shen, Cao, and van~den Hengel]{pang2021deep}
+Guansong Pang, Chunhua Shen, Longbing Cao, and Anton van~den Hengel.
+\newblock Deep learning for anomaly detection: A review.
+\newblock \emph{ACM Computing Surveys}, 54\penalty0 (2), 2021.
+
+\bibitem[Shi et~al.(2025)Shi, Xu, Hua, Zhang, Ermon, and Leskovec]{shi2025tabdiff}
+Juntong Shi, Minkai Xu, Harper Hua, Hengrui Zhang, Stefano Ermon, and Jure Leskovec.
+\newblock {TabDiff}: a mixed-type diffusion model for tabular data generation.
+\newblock In \emph{International Conference on Learning Representations (ICLR)}, 2025.
+
+\bibitem[Xu et~al.(2019)Xu, Skoularidou, Cuesta-Infante, and Veeramachaneni]{xu2019ctgan}
+Lei Xu, Maria Skoularidou, Alfredo Cuesta-Infante, and Kalyan Veeramachaneni.
+\newblock Modeling tabular data using conditional {GAN}.
+\newblock In \emph{Advances in Neural Information Processing Systems (NeurIPS)}, 2019.
+
+\bibitem[Zhang et~al.(2024)Zhang, Zhang, Srinivasan, Shen, Qin, Faloutsos, Rangwala, and Karypis]{zhang2024tabsyn}
+Hengrui Zhang, Jiani Zhang, Balasubramaniam Srinivasan, Zhengyuan Shen, Xiao Qin, Christos Faloutsos, Huzefa Rangwala, and George Karypis.
+\newblock Mixed-type tabular data synthesis with score-based diffusion in latent space.
+\newblock In \emph{International Conference on Learning Representations (ICLR)}, 2024.
+
+\end{thebibliography}

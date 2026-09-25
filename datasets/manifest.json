@@ -1,0 +1,169 @@
+{
+  "downloaded_utc": "2026-09-22T15:01:54.296223+00:00",
+  "original_sources": {
+    "nsl-kdd": "https://www.unb.ca/cic/datasets/nsl.html",
+    "unsw-nb15": "https://research.unsw.edu.au/projects/unsw-nb15-dataset"
+  },
+  "files": [
+    {
+      "path": "nsl-kdd/KDDTest+.arff",
+      "url": "https://zenodo.org/api/records/3768048/files/KDDTest+.arff/content",
+      "mirror": "https://zenodo.org/records/3768048",
+      "expected_bytes": 3368089,
+      "checksum_algorithm": "md5",
+      "expected_checksum": "0af8c3754211f03a76d51c200fb5dc4a",
+      "bytes": 3368089,
+      "sha256": "356577a52ee7e0f5d071048e1cec1bac8b3979ec3bbccb3a9b560d8fa454cd31"
+    },
+    {
+      "path": "nsl-kdd/KDDTest+.txt",
+      "url": "https://zenodo.org/api/records/3768048/files/KDDTest+.txt/content",
+      "mirror": "https://zenodo.org/records/3768048",
+      "expected_bytes": 3441513,
+      "checksum_algorithm": "md5",
+      "expected_checksum": "7c6d1b1af246690766394920d6b4c751",
+      "bytes": 3441513,
+      "sha256": "fa46b0935342616aa83b7c2578db355b6a7aaabbc492248172c7a1e8b7ab8f84"
+    },
+    {
+      "path": "nsl-kdd/KDDTest-21.arff",
+      "url": "https://zenodo.org/api/records/3768048/files/KDDTest-21.arff/content",
+      "mirror": "https://zenodo.org/records/3768048",
+      "expected_bytes": 1772643,
+      "checksum_algorithm": "md5",
+      "expected_checksum": "8feb561bcc1e5e454b79f189ac8c52f1",
+      "bytes": 1772643,
+      "sha256": "7e468b36283ababc18b5c8dd55ec1f584c7d66a53a64ca2bee910371e2af5bf1"
+    },
+    {
+      "path": "nsl-kdd/KDDTest-21.txt",
+      "url": "https://zenodo.org/api/records/3768048/files/KDDTest-21.txt/content",
+      "mirror": "https://zenodo.org/records/3768048",
+      "expected_bytes": 1814092,
+      "checksum_algorithm": "md5",
+      "expected_checksum": "02368ff472bbcd6788019c4c6a1c6201",
+      "bytes": 1814092,
+      "sha256": "746993ac9e25868827cacf09eab450050a2a1056e1ce48a1ad39f5dc801d531d"
+    },
+    {
+      "path": "nsl-kdd/KDDTrain+.arff",
+      "url": "https://zenodo.org/api/records/3768048/files/KDDTrain+.arff/content",
+      "mirror": "https://zenodo.org/records/3768048",
+      "expected_bytes": 18744510,
+      "checksum_algorithm": "md5",
+      "expected_checksum": "8e351c7ac395e6068317ac3a9840c66f",
+      "bytes": 18744510,
+      "sha256": "b62f83e288c6ac811718cdd94c9ace2f2d6be9294ad8184d1c372754432dbf6a"
+    },
+    {
+      "path": "nsl-kdd/KDDTrain+.txt",
+      "url": "https://zenodo.org/api/records/3768048/files/KDDTrain+.txt/content",
+      "mirror": "https://zenodo.org/records/3768048",
+      "expected_bytes": 19109424,
+      "checksum_algorithm": "md5",
+      "expected_checksum": "f5592a95d1d1428348dfa6ca9652a800",
+      "bytes": 19109424,
+      "sha256": "1b86d2f957b33082081bba410fe129b475efebcc13c9014c3f447c8271aadf95"
+    },
+    {
+      "path": "nsl-kdd/KDDTrain+_20Percent.arff",
+      "url": "https://zenodo.org/api/records/3768048/files/KDDTrain+_20Percent.arff/content",
+      "mirror": "https://zenodo.org/records/3768048",
+      "expected_bytes": 3750763,
+      "checksum_algorithm": "md5",
+      "expected_checksum": "f83729ea711e63e879b7b539dc1c4057",
+      "bytes": 3750763,
+      "sha256": "e5e5bf78f93b3d0da92fac27dcc12b423e0f2b3f431e042527f156248eb89370"
+    },
+    {
+      "path": "nsl-kdd/KDDTrain+_20Percent.txt",
+      "url": "https://zenodo.org/api/records/3768048/files/KDDTrain+_20Percent.txt/content",
+      "mirror": "https://zenodo.org/records/3768048",
+      "expected_bytes": 3822033,
+      "checksum_algorithm": "md5",
+      "expected_checksum": "e160feff7844050fc42c6d30ad0f2454",
+      "bytes": 3822033,
+      "sha256": "7ea86479faab5ca2190b7f18b4982fb058ce5bf2b46e0e1017d0d9ef90f9c16e"
+    },
+    {
+      "path": "unsw-nb15/NUSW-NB15_features.csv",
+      "url": "https://media.githubusercontent.com/media/jamshaid120/UNSW_NB15-Complete-dataset/161024104f19eea98b5c9aba0499a8fcb867ba1d/NUSW-NB15_features.csv",
+      "mirror": "https://github.com/jamshaid120/UNSW_NB15-Complete-dataset/tree/161024104f19eea98b5c9aba0499a8fcb867ba1d",
+      "expected_bytes": 4044,
+      "checksum_algorithm": "sha256",
+      "expected_checksum": "c55f19cceebb6360dc50f44f8a5f246ccefbcf8a6c604ac1ad46e643869cafce",
+      "bytes": 4044,
+      "sha256": "c55f19cceebb6360dc50f44f8a5f246ccefbcf8a6c604ac1ad46e643869cafce"
+    },
+    {
+      "path": "unsw-nb15/UNSW-NB15_1.csv",
+      "url": "https://zenodo.org/api/records/10140548/files/UNSW-NB15_1.csv/content",
+      "mirror": "https://zenodo.org/records/10140548",
+      "expected_bytes": 168979718,
+      "checksum_algorithm": "md5",
+      "expected_checksum": "560dcc5981b3f6ab98027a16b053c9c1",
+      "bytes": 168979718,
+      "sha256": "7d851bbeabd27894ce39c8e78835c73341fc946652fb7743b9eff193b55eb511"
+    },
+    {
+      "path": "unsw-nb15/UNSW-NB15_2.csv",
+      "url": "https://zenodo.org/api/records/10140548/files/UNSW-NB15_2.csv/content",
+      "mirror": "https://zenodo.org/records/10140548",
+      "expected_bytes": 165221021,
+      "checksum_algorithm": "md5",
+      "expected_checksum": "59215357fbed7c76efc6a404a8607688",
+      "bytes": 165221021,
+      "sha256": "6130ad02873cc6069ae695cf2844f2e8c2e9a9a1b7532dd82ab8f202757cacf8"
+    },
+    {
+      "path": "unsw-nb15/UNSW-NB15_3.csv",
+      "url": "https://zenodo.org/api/records/10140548/files/UNSW-NB15_3.csv/content",
+      "mirror": "https://zenodo.org/records/10140548",
+      "expected_bytes": 154588103,
+      "checksum_algorithm": "md5",
+      "expected_checksum": "75e8567341edb760a23f803b920b69d4",
+      "bytes": 154588103,
+      "sha256": "ae990a96c3dfcd425ce2801aadb1727a34d5e0ae6d8215dbcdae60dedfaef640"
+    },
+    {
+      "path": "unsw-nb15/UNSW-NB15_4.csv",
+      "url": "https://zenodo.org/api/records/10140548/files/UNSW-NB15_4.csv/content",
+      "mirror": "https://zenodo.org/records/10140548",
+      "expected_bytes": 97588754,
+      "checksum_algorithm": "md5",
+      "expected_checksum": "f55875cab7f037fdad40b5b737e7db5e",
+      "bytes": 97588754,
+      "sha256": "cdf563692d51d405541dd659ddcdad9fa01f001f05fe9fc4b67f00ca12fbc96a"
+    },
+    {
+      "path": "unsw-nb15/UNSW-NB15_LIST_EVENTS.csv",
+      "url": "https://media.githubusercontent.com/media/jamshaid120/UNSW_NB15-Complete-dataset/161024104f19eea98b5c9aba0499a8fcb867ba1d/UNSW-NB15_LIST_EVENTS.csv",
+      "mirror": "https://github.com/jamshaid120/UNSW_NB15-Complete-dataset/tree/161024104f19eea98b5c9aba0499a8fcb867ba1d",
+      "expected_bytes": 4639,
+      "checksum_algorithm": "sha256",
+      "expected_checksum": "5b40f8128e2c87e691157c76debde04c328b0eb66bab97f1e7e17625f84497f2",
+      "bytes": 4639,
+      "sha256": "5b40f8128e2c87e691157c76debde04c328b0eb66bab97f1e7e17625f84497f2"
+    },
+    {
+      "path": "unsw-nb15/UNSW_NB15_testing-set.csv",
+      "url": "https://media.githubusercontent.com/media/jamshaid120/UNSW_NB15-Complete-dataset/161024104f19eea98b5c9aba0499a8fcb867ba1d/UNSW_NB15_testing-set.csv",
+      "mirror": "https://github.com/jamshaid120/UNSW_NB15-Complete-dataset/tree/161024104f19eea98b5c9aba0499a8fcb867ba1d",
+      "expected_bytes": 32293018,
+      "checksum_algorithm": "sha256",
+      "expected_checksum": "bec7dd5ec88dc2a0ccc7a07879d338395ed7421750f675fd0339e07dfe0648fa",
+      "bytes": 32293018,
+      "sha256": "bec7dd5ec88dc2a0ccc7a07879d338395ed7421750f675fd0339e07dfe0648fa"
+    },
+    {
+      "path": "unsw-nb15/UNSW_NB15_training-set.csv",
+      "url": "https://media.githubusercontent.com/media/jamshaid120/UNSW_NB15-Complete-dataset/161024104f19eea98b5c9aba0499a8fcb867ba1d/UNSW_NB15_training-set.csv",
+      "mirror": "https://github.com/jamshaid120/UNSW_NB15-Complete-dataset/tree/161024104f19eea98b5c9aba0499a8fcb867ba1d",
+      "expected_bytes": 15380800,
+      "checksum_algorithm": "sha256",
+      "expected_checksum": "734fe6642edf758f7c94d7d9149426b49d202fe8e7bf0bef47392489c3c0a559",
+      "bytes": 15380800,
+      "sha256": "734fe6642edf758f7c94d7d9149426b49d202fe8e7bf0bef47392489c3c0a559"
+    }
+  ]
+}

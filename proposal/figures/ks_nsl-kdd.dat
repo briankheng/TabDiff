@@ -1,0 +1,11 @@
+feature ks
+dst\_host\_serror\_rate 0.613
+count 0.656
+dst\_host\_diff\_srv\_rate 0.671
+logged\_in 0.694
+dst\_host\_srv\_count 0.709
+dst\_host\_same\_srv\_rate 0.716
+diff\_srv\_rate 0.732
+same\_srv\_rate 0.734
+dst\_bytes 0.815
+src\_bytes 0.857

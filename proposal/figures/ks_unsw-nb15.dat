@@ -1,0 +1,11 @@
+feature ks
+sjit 0.360
+dinpkt 0.396
+ct\_srv\_dst 0.397
+dload 0.486
+synack 0.496
+tcprtt 0.497
+ackdat 0.498
+dttl 0.509
+ct\_state\_ttl 0.647
+sttl 0.658

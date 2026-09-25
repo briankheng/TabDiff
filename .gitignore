@@ -1,0 +1,56 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Packaging and build output
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Test coverage
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+
+# Jupyter notebooks
+.ipynb_checkpoints/
+
+# Local environment settings
+.env
+.env.*
+!.env.example
+
+# Editors
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Logs and OS files
+*.log
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Downloaded full datasets
+/datasets/nsl-kdd/
+/datasets/unsw-nb15/
+
+# Generated coursework submissions
+/nsl-kdd/submission.csv
+/unsw-nb15/submission.csv
+
+# Local judge models, evaluation rows, and scores
+/results/
