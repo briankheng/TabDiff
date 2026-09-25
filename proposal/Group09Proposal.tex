@@ -47,7 +47,7 @@ Name & Student number \\
 \midrule
 Brian Kheng & A0290248B \\
 Mei Xianle & \fillin{A0000000X} \\
-Passion Goh Wei Ling & \fillin{A0000000X} \\
+Passion Goh Wei Ling & \fillin{A0222740R} \\
 \bottomrule
 \end{tabular}
 \vfill
@@ -56,16 +56,16 @@ Passion Goh Wei Ling & \fillin{A0000000X} \\
 
 \section{Introduction}
 
-For each of two network intrusion datasets we get a labelled training set and have to submit a fixed number of synthetic normal rows: 40,000 for NSL-KDD and 70,000 for UNSW-NB15. The organisers fit two fixed detectors on those rows, ECOD and an Isolation Forest (10 seeds of 500 trees), and score them by the area under the precision-recall curve (AUPRC) on hidden validation and test sets. The final score is the mean of the two AUPRCs, and the hidden sets contain attack types that never appear in training.
+For each of two network intrusion datasets we get a labelled training set and have to submit a fixed number of synthetic normal rows: 40,000 for NSL-KDD and 70,000 for UNSW-NB15. These samples are used to train predefined anomaly detectors, ECOD and Isolation Forest, which are evaluated using AUPRC on hidden validation and test sets.
 
-This makes the task a bit unusual. We never train a detector ourselves, and the rows we submit are, as far as the detectors know, the definition of normal traffic. A good submission has to cover the normal traffic in the hidden sets, so that it isn't flagged, while leaving the places where attacks live empty, so that attacks land in the tails. Copying the training distribution does the first job but not the second.
+Since the hidden sets include attack types not present in the training data, our goal is not only to reproduce the training distribution, but to generate normal samples that provide sufficient coverage of legitimate traffic while maintaining separation from potential anomalies.
 
-Our plan is to train a mixed-type diffusion model, TabDiff~\cite{shi2025tabdiff}, on all training rows with the label as an extra column, and then sample normal rows with a guidance term that pushes each sample away from what the model associates with attacks. Section~\ref{sec:eda} looks at where the attacks actually sit in the data, Section~\ref{sec:related} covers related work, and Section~\ref{sec:approach} describes the method, the evidence for it so far, and how we will evaluate it.
+To achieve this, we propose using the mixed-type diffusion model, TabDiff~\cite{shi2025tabdiff}, on all training rows with the label as an extra column, and then sample normal rows with a guidance term that pushes each sample away from what the model associates with attacks. Section~\ref{sec:eda} looks at where the attacks actually sit in the data, Section~\ref{sec:related} covers related work, and Section~\ref{sec:approach} presents our proposed approach and evaluation strategy.
 
 \section{Exploratory data analysis}
 \label{sec:eda}
 
-Table~\ref{tab:data} summarises the two training sets. Both are mixed-type tables with three categorical columns, and both have a little over twice as many normal rows as attacks. The numeric columns are hard to model. In NSL-KDD, 23 of the 38 numeric columns are zero in over 90\% of normal rows, and \col{src\_bytes} has a skewness of about 129 among normal rows. Eleven NSL-KDD columns and ten UNSW-NB15 columns take at most 20 distinct values (flags, TTLs and small counters), and two NSL-KDD columns, \col{num\_outbound\_cmds} and \col{is\_host\_login}, are constant. A generator that treats all of these as continuous will waste probability mass on values that never occur, such as a TTL of 45.
+Table~\ref{tab:data} summarises the two training sets. Both are mixed-type tables with three categorical columns, and both have a little over twice as many normal rows as attacks. The numeric columns are hard to model. In NSL-KDD, 23 of the 38 numeric columns are zero in over 90\% of normal rows, and \col{src\_bytes} has a skewness of about 129 among normal rows. Eleven NSL-KDD columns and ten UNSW-NB15 columns take at most 20 distinct values (flags, TTLs and small counters), and two NSL-KDD columns, \col{num\_outbound\_cmds} and \col{is\_host\_login}, are constant. These characteristics suggest that treating all numerical features as continuous may generate unrealistic values that are not observed in the data.
 
 \begin{table}[htb]
 \centering
@@ -91,7 +91,7 @@ Numeric features with normal-vs-attack KS distance above 0.5 & 13 & 3 \\
 \end{tabular}
 \end{table}
 
-The briefing distinguishes anomalies with an odd value from anomalies that are a rare combination of ordinary values, so we checked which kind the training attacks are. For each attack row we asked whether any numeric value falls outside the range seen in normal rows, or whether any categorical value never appears in a normal row. In NSL-KDD, 32.5\% of attacks use a category that no normal row uses (41 of the 67 \col{service} values appear only in attacks), but only 2.0\% have an out-of-range number. The other 65.5\% sit inside the normal range on every column. UNSW-NB15 is far more extreme: 97.2\% of its attacks are inside the normal range everywhere.
+Beyond these distributional challenges, we also examined whether attacks could be identified through unusual individual values or through unusual combinations of normal values. For each attack row, we checked whether any numeric value falls outside the range seen in normal rows, or whether any categorical value never appears in a normal row. In NSL-KDD, 32.5\% of attacks use a category that no normal row uses (41 of the 67 \col{service} values appear only in attacks), but only 2.0\% have an out-of-range number. The other 65.5\% sit inside the normal range on every column. This effect is more pronounced in UNSW-NB15, where 97.2\% of its attacks lie within the normal range across all columns. These findings suggest that most attacks cannot be flagged through unusual individual values alone, and must instead be detected through unusual combinations of otherwise ordinary values as validated in the figure below.
 
 \begin{figure}[t]
 \centering
@@ -124,9 +124,7 @@ The briefing distinguishes anomalies with an odd value from anomalies that are a
 \label{fig:ks}
 \end{figure}
 
-Figure~\ref{fig:ks} ranks the numeric columns by the Kolmogorov-Smirnov (KS) distance between their normal and attack values. NSL-KDD has 13 columns above 0.5, led by the byte counts. UNSW-NB15 has three, all derived from TTLs, and these show how an attack can look unremarkable one column at a time. Every UNSW-NB15 attack has \col{sttl} equal to 254 (71.5\%) or 62 (28.5\%), and both values are common in normal traffic too, at 27.1\% and 7.0\% of normal rows. The attacks give themselves away through how often these values occur and what they occur together with, not through the values themselves.
-
-This matters because of how the two detectors work. ECOD scores each column by its tail probability under the empirical distribution of the training rows and adds the scores up, so it only responds to odd values. Isolation Forest can isolate rare combinations with its random axis-parallel splits, but with scikit-learn's default settings each tree only sees 256 rows. Both are fitted on our submission. So on UNSW-NB15, the only way to raise an attack's ECOD score is to make values such as $\col{sttl}=254$ rarer in the synthetic data than they are in real normal traffic, and a faithful copy of the normal rows cannot do that. This fits the low scores on this dataset: the provided sample submission scores 0.383 on the public leaderboard for UNSW-NB15, against 0.899 for NSL-KDD.
+Figure~\ref{fig:ks} ranks the numeric columns by the Kolmogorov-Smirnov (KS) distance between their normal and attack values. NSL-KDD has 13 columns above 0.5, led by the byte counts while UNSW-NB15 has three, all derived from TTLs. Every UNSW-NB15 attack has \col{sttl} equal to 254 (71.5\%) or 62 (28.5\%), and both values are common in normal traffic too, at 27.1\% and 7.0\% of normal rows. This is strong evidence that attacks are best detected through through how often these values occur and what they co-occur with rather than through the values themselves. 
 
 \section{Related work}
 \label{sec:related}
