@@ -46,8 +46,8 @@
 Name & Student number \\
 \midrule
 Brian Kheng & A0290248B \\
-Mei Xianle & \fillin{A0000000X} \\
-Passion Goh Wei Ling & \fillin{A0222740R} \\
+Mei Xianle & A0331789N \\
+Passion Goh Wei Ling & A0222740R \\
 \bottomrule
 \end{tabular}
 \vfill
@@ -56,7 +56,7 @@ Passion Goh Wei Ling & \fillin{A0222740R} \\
 
 \section{Introduction}
 
-For each of two network intrusion datasets we get a labelled training set and have to submit a fixed number of synthetic normal rows: 40,000 for NSL-KDD and 70,000 for UNSW-NB15. These samples are used to train predefined anomaly detectors, ECOD and Isolation Forest, which are evaluated using AUPRC on hidden validation and test sets.
+For each of two network intrusion datasets we get a labelled training set and have to submit a fixed number of synthetic normal rows: 40,000 for NSL-KDD~\cite{tavallaee2009nslkdd} and 70,000 for UNSW-NB15~\cite{moustafa2015unsw}. These samples are used to train predefined anomaly detectors, ECOD and Isolation Forest, which are evaluated using AUPRC on hidden validation and test sets.
 
 Since the hidden sets include attack types not present in the training data, our goal is not only to reproduce the training distribution, but to generate normal samples that provide sufficient coverage of legitimate traffic while maintaining separation from potential anomalies.
 
@@ -124,7 +124,7 @@ Beyond these distributional challenges, we also examined whether attacks could b
 \label{fig:ks}
 \end{figure}
 
-Figure~\ref{fig:ks} ranks the numeric columns by the Kolmogorov-Smirnov (KS) distance between their normal and attack values. NSL-KDD has 13 columns above 0.5, led by the byte counts while UNSW-NB15 has three, all derived from TTLs. Every UNSW-NB15 attack has \col{sttl} equal to 254 (71.5\%) or 62 (28.5\%), and both values are common in normal traffic too, at 27.1\% and 7.0\% of normal rows. This is strong evidence that attacks are best detected through through how often these values occur and what they co-occur with rather than through the values themselves. 
+Figure~\ref{fig:ks} ranks the numeric columns by the Kolmogorov-Smirnov (KS) distance between their normal and attack values. NSL-KDD has 13 columns above 0.5, led by the byte counts while UNSW-NB15 has three, all derived from TTLs. Every UNSW-NB15 attack has \col{sttl} equal to 254 (71.5\%) or 62 (28.5\%), and both values are common in normal traffic too, at 27.1\% and 7.0\% of normal rows. This is strong evidence that attacks are best detected through how often these values occur and what they co-occur with rather than through the values themselves. 
 
 \section{Related work}
 \label{sec:related}
