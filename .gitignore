@@ -54,3 +54,27 @@ Desktop.ini
 
 # Local judge models, evaluation rows, and scores
 /results/
+
+# Model checkpoints outside results/
+*.pt
+*.ckpt
+*.joblib
+
+# LaTeX build files (the compiled PDF is still tracked)
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.lot
+*.nav
+*.out
+*.run.xml
+*.snm
+*.synctex.gz
+*.synctex(busy)
+*.toc
+*.vrb
+*.xdv
