@@ -46,7 +46,7 @@
 Name & Student number \\
 \midrule
 Brian Kheng & A0290248B \\
-Mei Xianle & \fillin{A0000000X} \\
+Mei Xianle & A0331789N \\
 Passion Goh Wei Ling & A0222740R \\
 \bottomrule
 \end{tabular}
@@ -56,7 +56,7 @@ Passion Goh Wei Ling & A0222740R \\
 
 \section{Introduction}
 
-For each of two network intrusion datasets we get a labelled training set and have to submit a fixed number of synthetic normal rows: 40,000 for NSL-KDD and 70,000 for UNSW-NB15. These samples are used to train predefined anomaly detectors, ECOD and Isolation Forest, which are evaluated using AUPRC on hidden validation and test sets.
+For each of two network intrusion datasets we get a labelled training set and have to submit a fixed number of synthetic normal rows: 40,000 for NSL-KDD~\cite{tavallaee2009nslkdd} and 70,000 for UNSW-NB15~\cite{moustafa2015unsw}. These samples are used to train predefined anomaly detectors, ECOD and Isolation Forest, which are evaluated using AUPRC on hidden validation and test sets.
 
 Since the hidden sets include attack types not present in the training data, our goal is not only to reproduce the training distribution, but to generate normal samples that provide sufficient coverage of legitimate traffic while maintaining separation from potential anomalies.
 
